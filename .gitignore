@@ -31,3 +31,5 @@
 *.out
 *.app
 /ConsoleApp/.vs
+/ConsoleApp/ConsoleApp/Debug
+ConsoleApp/Debug/ConsoleApp.pdb
