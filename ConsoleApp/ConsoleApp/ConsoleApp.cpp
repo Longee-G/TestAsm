@@ -12,9 +12,19 @@ void testSwitch(int n, int a, int b, int c)
 	case 1:
 		printf("1"); break;
 	case 2:
-		printf("1"); break;
+		printf("2"); break;
 	case 3:
-		printf("1"); break;
+		printf("3"); break;
+	case 4:
+		printf("4"); break;
+	case 5:
+		printf("5"); break;
+	case 7:
+		printf("7"); break;
+	case 8:
+		printf("8"); break;
+	case 9:
+		printf("9"); break;
 	default:
 		printf("%d", s); break;
 	}
@@ -27,45 +37,24 @@ int testSum(int a, int b, int c)
 
 int main(int argc, char* argv[])
 {
-	int s = testSum(10, 9, 1);
-
-
 	__asm
 	{
-		push eax;
-		push 1;
-		push 2;
-		push 3;
-		push 4;
-		pop eax;
-		pop ebx;
-		pop ecx;
-		pop edx;
-		pop eax;
-	};
+		mov eax, esp;
+		mov eax, [esp];
+		mov eax, [esp - 4];
+		mov eax, [esp - 8];
 
+
+		lea ebx, [esp - 4];
+
+
+	}
 
 	testSwitch(1, 2, 3, 4);
 
-	float f = (float)argc;
-	printf("%f", f);
-	argc = (int)f;
-	printf("%d", argc);
 
-
-
-	int8_t i8 = 0xab;
-	int16_t i16 = 0xabcd;
-	int a = 0x79010203;
-	int b = -3;
-	int c = (a + b) + (b + 0);
-	float d = 3.1415926f;
-	float e = 2.0 * d;
-
-
-
-
-	return c;
+	int s = testSum(10, 9, 1);
+	return s;
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
